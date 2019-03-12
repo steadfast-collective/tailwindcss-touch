@@ -1,6 +1,6 @@
 {
     "name": "tailwindcss-touch",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A collection of touch variants for the tailwindcss framework",
     "main": "index.js",
     "scripts": {
