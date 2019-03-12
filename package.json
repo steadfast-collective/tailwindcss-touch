@@ -1,0 +1,28 @@
+{
+    "name": "tailwindcss-touch",
+    "version": "0.0.1",
+    "description": "A collection of touch variants for the tailwindcss framework",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/steadfastcollective/tailwindcss-touch.git"
+    },
+    "keywords": [
+        "tailwind",
+        "tailwindcss",
+        "plugin",
+        "tailwindcss-plugin"
+    ],
+    "author": "steadfastcollective",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/steadfastcollective/tailwindcss-touch/issues"
+    },
+    "homepage": "https://github.com/steadfastcollective/tailwindcss-touch#readme",
+    "devDependencies": {
+        "lodash": "^4.17.5"
+    }
+}
