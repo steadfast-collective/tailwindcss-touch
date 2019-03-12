@@ -1,7 +1,7 @@
 const postcss = require('postcss')
 
 module.exports = function() {
-    function({ addVariant }) {
+    return function({ addVariant }) {
         addVariant('pointer-coarse', ({ container, separator }) => {
             const supportsRule = postcss.atRule({ name: 'media', params: '(pointer: coarse)' })
             supportsRule.nodes = container.nodes
