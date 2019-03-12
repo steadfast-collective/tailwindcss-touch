@@ -1,7 +1,6 @@
 const postcss = require('postcss')
 
 module.exports = function() {
-
     function({ addVariant }) {
         addVariant('pointer-coarse', ({ container, separator }) => {
             const supportsRule = postcss.atRule({ name: 'media', params: '(pointer: coarse)' })
@@ -43,6 +42,5 @@ module.exports = function() {
                 rule.selector = `.hover-none${separator}${rule.selector.slice(1)}`
             })
         })
-
     }
 }
