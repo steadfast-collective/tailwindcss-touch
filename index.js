@@ -1,45 +1,45 @@
 const postcss = require('postcss')
 
 module.exports = function() {
-    return function({ addVariant }) {
+    return function({ addVariant, e }) {
         addVariant('pointer-coarse', ({ container, separator }) => {
-            const supportsRule = postcss.atRule({ name: 'media', params: '(pointer: coarse)' })
-            supportsRule.nodes = container.nodes
-            container.nodes = [supportsRule]
-            supportsRule.walkRules(rule => {
-                rule.selector = `.pointer-coarse${separator}${rule.selector.slice(1)}`
+            const pointerCoarse = postcss.atRule({ name: 'media', params: '(pointer: coarse)' })
+            pointerCoarse.append(container.nodes)
+            container.append(pointerCoarse)
+            pointerCoarse.walkRules(rule => {
+                rule.selector = `.${e(`pointer-coarse${separator}${rule.selector.slice(1)}`)}`
             })
         })
         addVariant('pointer-fine', ({ container, separator }) => {
-            const supportsRule = postcss.atRule({ name: 'media', params: '(pointer: fine)' })
-            supportsRule.nodes = container.nodes
-            container.nodes = [supportsRule]
-            supportsRule.walkRules(rule => {
-                rule.selector = `.pointer-fine${separator}${rule.selector.slice(1)}`
+            const pointerFine = postcss.atRule({ name: 'media', params: '(pointer: fine)' })
+            pointerFine.append(container.nodes)
+            container.append(pointerFine)
+            pointerFine.walkRules(rule => {
+                rule.selector = `.${e(`pointer-fine${separator}${rule.selector.slice(1)}`)}`
             })
         })
         addVariant('pointer-none', ({ container, separator }) => {
-            const supportsRule = postcss.atRule({ name: 'media', params: '(pointer: none)' })
-            supportsRule.nodes = container.nodes
-            container.nodes = [supportsRule]
-            supportsRule.walkRules(rule => {
-                rule.selector = `.pointer-none${separator}${rule.selector.slice(1)}`
+            const pointerNone = postcss.atRule({ name: 'media', params: '(pointer: none)' })
+            pointerNone.append(container.nodes)
+            container.append(pointerNone)
+            pointerNone.walkRules(rule => {
+                rule.selector = `.${e(`pointer-none${separator}${rule.selector.slice(1)}`)}`
             })
         })
         addVariant('hover-hover', ({ container, separator }) => {
-            const supportsRule = postcss.atRule({ name: 'media', params: '(hover: hover)' })
-            supportsRule.nodes = container.nodes
-            container.nodes = [supportsRule]
-            supportsRule.walkRules(rule => {
-                rule.selector = `.hover-hover${separator}${rule.selector.slice(1)}`
+            const hoverHover = postcss.atRule({ name: 'media', params: '(hover: hover)' })
+            hoverHover.append(container.nodes)
+            container.append(hoverHover)
+            hoverHover.walkRules(rule => {
+                rule.selector = `.${e(`hover-hover${separator}${rule.selector.slice(1)}`)}`
             })
         })
         addVariant('hover-none', ({ container, separator }) => {
-            const supportsRule = postcss.atRule({ name: 'media', params: '(hover: none)' })
-            supportsRule.nodes = container.nodes
-            container.nodes = [supportsRule]
-            supportsRule.walkRules(rule => {
-                rule.selector = `.hover-none${separator}${rule.selector.slice(1)}`
+            const hoverNone = postcss.atRule({ name: 'media', params: '(hover: none)' })
+            hoverNone.append(container.nodes)
+            container.append(hoverNone)
+            hoverNone.walkRules(rule => {
+                rule.selector = `.${e(`hover-none${separator}${rule.selector.slice(1)}`)}`
             })
         })
     }
